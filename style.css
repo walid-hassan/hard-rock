@@ -70,4 +70,6 @@ p {
 .single-result:hover {
     transform: scale(1.04);
 }
-
+#result{
+    display: none;
+}

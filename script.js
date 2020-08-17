@@ -55,8 +55,7 @@ function getdata(id, name, singer , imgbox){
         showdata(name, songName);
         showdata(singer, artist);
         addimg( imgbox, imgLink);
-        document.querySelector('.single-result').style.visibility = 'visible';
-        console.log(songName, artist, img);
+        document.getElementById('result').style.display = 'block';
     })
 }
 function getlyrics(singer, name){
@@ -66,14 +65,9 @@ function getlyrics(singer, name){
     fetch (api)
     .then(res => res.json())
     .then( data => {
-        if (data.lyrics){
-            const lyrics = data.lyrics;
+        const lyrics = data.lyrics;
         showdata('.lyric', lyrics)
-        console.log(song);
-        }
-        else{
-            alert('not found')
-        }
+        console.log(lyrics);
     })
 }
 function addimg(place, link) {
