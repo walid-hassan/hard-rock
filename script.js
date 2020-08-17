@@ -55,6 +55,7 @@ function getdata(id, name, singer , imgbox){
         showdata(name, songName);
         showdata(singer, artist);
         addimg( imgbox, imgLink);
+        document.querySelector('.keyword').value = "";
         document.getElementById('result').style.display = 'block';
     })
 }
