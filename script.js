@@ -11,34 +11,34 @@ document.querySelector(".search").addEventListener("click", () => {
     getdata(9, '.lyrics-nameTen', '.nameTen', '.album-imgTen')
 })
 document.querySelector(".getOne").addEventListener("click", () => {
-    getlyrics('.lyrics-nameOne', '.nameOne');
+    getlyrics('.nameOne', '.lyrics-nameOne');
 })
 document.querySelector(".getTwo").addEventListener("click", () => {
-    getlyrics('.lyrics-nameTwo', '.nameTwo');
+    getlyrics('.nameTwo', '.lyrics-nameTwo');
 })
 document.querySelector(".getthree").addEventListener("click", () => {
-    getlyrics('.lyrics-namethree', '.namethree');
+    getlyrics( '.namethree', '.lyrics-namethree');
 })
 document.querySelector(".getFour").addEventListener("click", () => {
-    getlyrics('.lyrics-nameFour', '.nameFour');
+    getlyrics('.nameFour', '.lyrics-nameFour');
 })
 document.querySelector(".getFive").addEventListener("click", () => {
-    getlyrics('.lyrics-nameFive', '.nameFive');
+    getlyrics('.nameFive', '.lyrics-nameFive');
 })
 document.querySelector('.getSix').addEventListener("click", () => {
-    getlyrics('.lyrics-nameSix', '.nameSix');
+    getlyrics('.nameSix', '.lyrics-nameSix');
 })
 document.querySelector(".getSeven").addEventListener("click", () => {
-    getlyrics('.lyrics-nameSeven', '.nameSeven');
+    getlyrics( '.nameSeven', '.lyrics-nameSeven');
 })
 document.querySelector(".getEight").addEventListener("click", () => {
-    getlyrics('.lyrics-nameEight', '.nameEight');
+    getlyrics('.nameEight', '.lyrics-nameEight');
 })
 document.querySelector(".getNine").addEventListener("click", () => {
-    getlyrics('.lyrics-nameNine', '.nameNine');
+    getlyrics('.nameNine', '.lyrics-nameNine');
 })
 document.querySelector(".getTen").addEventListener("click", () => {
-    getlyrics('.lyrics-nameTen', '.nameTen');
+    getlyrics('.nameTen', '.lyrics-nameTen');
 })
 function showdata(id, data){
     document.querySelector(id).innerText = data;
@@ -59,15 +59,23 @@ function getdata(id, name, singer , imgbox){
     })
 }
 function getlyrics(singer, name){
-    const artist = document.querySelector(singer).innerText;
-    const song = document.querySelector(name).innerText;
+    let artist = document.querySelector(singer).innerText;
+    let song = document.querySelector(name).innerText;
     let api = `https://api.lyrics.ovh/v1/${artist}/${song}`
     fetch (api)
     .then(res => res.json())
     .then( data => {
-        const lyrics = data.lyrics;
-        showdata('.lyric', lyrics)
-        console.log(lyrics);
+        if (data.lyrics){
+            let lyrics = data.lyrics;
+            document.querySelector('.lyric').innerText = '';
+            showdata('.lyric', lyrics);
+            document.querySelector('.songName').innerText = song;
+            document.querySelector('.singerName').innerText = artist;
+        }
+        else{
+            alert ('Sorry No lyrics Found');
+            document.querySelector('.lyric').innerText = '';
+        }
     })
 }
 function addimg(place, link) {
