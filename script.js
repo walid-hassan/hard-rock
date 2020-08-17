@@ -62,7 +62,7 @@ function getdata(id, name, singer , imgbox){
 function getlyrics(singer, name){
     const artist = document.querySelector(singer).innerText;
     const song = document.querySelector(name).innerText;
-    let api = `https://api.lyrics.ovh/v1/${artist}/${song}`
+    let api = `https://private-0365c8-lyricsovh.apiary-proxy.com/v1/${artist}/${song}`
     fetch (api)
     .then(res => res.json())
     .then( data => {

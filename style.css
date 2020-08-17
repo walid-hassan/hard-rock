@@ -19,14 +19,32 @@ img {
     border: 2px solid white;
     box-shadow: 2px 2px 10px black;
 }
+.h3, h3 {
+    font-size: 26px;
+    font-weight: 700;
+    text-shadow: 2px 2px 10px black;
+    color: #56f2c6;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    text-shadow: 1px 1px 5px #150d0d;
+    font-weight: 600;
+}
 .btn{
     border-radius: 1.5rem;
     padding: 9px 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px black;
+    border: 2px solid green;
+    box-shadow: 6px 6px 10px #0000007a;
 }
 
 .btn-privious{
     background: rgba(255, 255, 255, 0.2);
     color: #ffffff;
+    
 }
 .navbar-toggler {
     border: none;
@@ -43,6 +61,13 @@ img {
 .single-result{
     background: rgba(255, 255, 255, 0.2);
     border-radius: 15px;
+    background: rgba(99, 191, 169, 0.2);
+    border-radius: 15px;
+    border: 2px solid #52fd752e;
+    box-shadow: 2px 2px 10px #56ec4963;
+    transition: 1s;
 }
-
+.single-result:hover {
+    transform: scale(1.04);
+}
 
